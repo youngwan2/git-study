@@ -1,36 +1,33 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
-# Controls when the workflow will run
+# 워크플로가 실행될 조건을 제어합니다.
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # "main" 브랜치로의 푸시 또는 풀 리퀘스트 이벤트에서 워크플로를 트리거합니다.
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Actions 탭에서 이 워크플로를 수동으로 실행할 수 있도록 합니다.
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# 워크플로 실행은 순차적으로 또는 병렬로 실행될 하나 이상의 작업(job)으로 구성됩니다.
 jobs:
-  # This workflow contains a single job called "build"
+  # 이 워크플로에는 "build"라는 하나의 작업이 포함되어 있습니다.
   build:
-    # The type of runner that the job will run on
+    # 작업이 실행될 실행 환경 유형을 지정합니다.
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # 스텝은 작업의 일부로 실행될 일련의 작업 단골을 나타냅니다.
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # 리포지토리를 $GITHUB_WORKSPACE 아래에 체크아웃하여 작업이 해당 리포지토리에 접근할 수 있도록 합니다.
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
+      # 실행 환경의 쉘을 사용하여 단일 명령을 실행합니다.
+      - name: 한 줄 스크립트 실행
         run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      # 실행 환경의 쉘을 사용하여 여러 줄 스크립트를 실행합니다.
+      - name: 다중 라인 스크립트 실행
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          echo 다른 액션들을 추가하여 프로젝트를 빌드, 테스트 및 배포하세요.
